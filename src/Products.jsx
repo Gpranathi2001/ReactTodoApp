@@ -4,12 +4,7 @@ import { Link } from "react-router-dom";
 function Products(props) {
   const products = props.test;
 
-  // if(loading) {
-  //     return(
-  //         <h1 className="text-center"> loading.....</h1>
-  //     )
-  // }
-
+ 
   return (
     <>
       <div className="container">
@@ -20,15 +15,15 @@ function Products(props) {
             <div key={index} className="col-3 mb-4">
               <div
                 style={{
-                  border: "1px solid #ccc",
-                  padding: "10px",
+                  border: "2px solid grey",
+                  padding: "5px",
                   textAlign: "center",
                 }}
               >
                 <div>
                   <img
                     src={product.image}
-                    style={{ width: "200px", height: "200px" }}
+                    style={{ width: "150px", height: "150px" }}
                     alt={product.title}
                   />
                 </div>
@@ -49,7 +44,7 @@ function Products(props) {
                 >
                   <button
                     className="btn btn-warning"
-                    style={{ flex: "1", marginRight: "5px" }}
+                    style={{ flex: "1", marginRight: "3px" }}
                   >
                     Add to Cart
                   </button>

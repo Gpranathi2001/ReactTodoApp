@@ -14,11 +14,6 @@ function ProductDetail({ product }) {
 
   console.log(prod, "prod");
 
-  // if (loading) {
-  //     return (
-  //         <h1 className="text-center mt-5">Loading...</h1>
-  //     );
-  // }
 
   return (
     <>

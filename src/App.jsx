@@ -30,7 +30,7 @@ useEffect(()=>{
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login/>}/>
-      <Route path="/products" element={<products test={products}/>} />
+      <Route path="/products" element={<Products test={products}/>} />
 
       <Route path="/products/:id" 
       element={<ProductDetail product={products}/>}
