@@ -27,7 +27,8 @@ function TodoApp(){
             id:counter,
             text :enteredText,
             isEditing : false,
-            completed:false
+            completed:false,
+            editText:enteredText
 
             }
         ]
@@ -61,11 +62,12 @@ const handleCheckbox=(todoId)=>{
 }
 
 
-const handleEdit=(todoId,currentText)=>{
+const handleEdit=(todoId)=>{
      
     const updateEdit =todo.map((eachTodo)=> eachTodo.id == todoId ? 
     {...eachTodo,isEditing:!eachTodo.isEditing}:eachTodo)
-    setUpdateTodo(currentText);
+
+   
     setUpdateTodo('')
 
     setTodo(updateEdit)
@@ -78,6 +80,14 @@ const handleSave=(todoId)=>{
     {...eachTodo,isEditing: false,text:updateTodo}:eachTodo)
 
     setTodo(updateSave)
+}
+
+
+const handleEditTextChange=(todoId,value)=>{
+    const updateEditText=todo.map((eachTodo) => eachTodo.id==todoId?
+    {...eachTodo,editText:value}:eachTodo
+)
+setTodo(updateEditText)
 }
 
 
@@ -124,6 +134,9 @@ const handleSave=(todoId)=>{
                                     <input type='text'
                                      value={updateTodo}
                                      onChange={(e)=>setUpdateTodo(e.target.value)}
+                                  // value={each.editText}
+                                 //  onChange={(e)=>handleEditTextChange(each.id,e.target.value)}
+                                     
                                      
                                    />
 
@@ -133,13 +146,14 @@ const handleSave=(todoId)=>{
                                 )
                              }
 
+                            
 
 
                             {
                                 each.isEditing ?(
                                     <button onClick={()=>handleSave(each.id)}>Save</button>
                                 ):(
-                                    <button onClick={()=>handleEdit(each.id)}>edit</button>
+                                    <button onClick={()=>handleEdit(each.id,each.text)}>edit</button>
 
 
                                 )

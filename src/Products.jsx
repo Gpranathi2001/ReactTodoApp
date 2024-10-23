@@ -8,7 +8,7 @@ function Products(props) {
   return (
     <>
       <div className="container">
-        <h1 className="text-center">Products</h1>
+        <h1 className="text-center">products</h1>
 
         <div className="row">
           {products.map((product, index) => (
@@ -29,7 +29,7 @@ function Products(props) {
                 </div>
                 <Link to={`/products/${product.id}`}>
                   {product.title.length > 25
-                    ? `${product.title.substring(0, 25)}`
+                    ? `${product.title.substring(0, 20)}`
                     : product.title}
                 </Link>
 
